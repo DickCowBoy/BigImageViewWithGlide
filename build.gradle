@@ -1,0 +1,23 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+buildscript {
+    repositories {
+        //jcenter() 服务器无法链接到jcenter 故使用本地maven仓库来解决gradle-android-plugin插件的依赖
+        //将maven缓存文件夹.m2解压到系统根目录,在此处添加maveLocal()即可
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        //本次使用的gradle版本是2.14.1,对应gradle-android-plugin插件是2.1.2
+        classpath 'com.android.tools.build:gradle:2.3.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+
+}

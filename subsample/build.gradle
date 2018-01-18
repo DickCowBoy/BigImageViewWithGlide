@@ -1,0 +1,29 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+repositories {
+    maven {
+        url 'http://source.tp-link.net:8081/nexus/content/groups/public/'
+    }
+    mavenLocal()
+    jcenter()
+}
+
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        consumerProguardFiles 'proguard-rules.txt'
+    }
+}
+
+configurations {
+    javadocs
+}
+
+dependencies {
+    compile 'com.android.support:support-annotations:27.0.2'
+    compile 'com.android.support:exifinterface:27.0.2'
+}
